@@ -1,0 +1,25 @@
+/* 搜索 */
+.content{
+    background-color:#f9f9f9;
+    overflow: scroll;
+}
+.content .search-bar{
+    height:44px;
+    background-color:#efeff4;
+    padding:10px;
+
+}
+.content .search-bar .bar-icon-input{
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+.content .search-bar .bar-icon-input input{
+    text-align: center;
+}
+.content .search-bar .bar-icon-input i{
+    position: absolute;
+    left: 42%;
+    top: 1.3px;
+
+}

@@ -1,0 +1,63 @@
+/*--------- 页尾 ---------*/
+.footer{
+    height:50px;
+    line-height: 50px;
+    background-color: #f9f9f9;
+    position: relative;
+    
+}
+.footer::before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    border-top: 1px solid #d9d9d9;
+    height: 1px;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    width: 200%;
+}
+.footer .nav{
+    height:100%;
+}
+.footer .nav .nav-wx,
+.footer .nav .nav-contacts,
+.footer .nav .nav-find,
+.footer .nav .nav-me{
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size:12px;
+    float:left;
+    position: relative;
+    color: #797979;
+}
+.footer .nav .icon{
+    height:60%;
+
+}
+.footer .nav .icon i::before{
+    font-size:25px;
+}
+.footer .wx-state{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    background-color: red;
+    top: 2px;
+    border-radius: 50%;
+    left: 50%;
+    color:white;
+}
+.footer .find-state{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    top: 2px;
+    border-radius: 50%;
+    left: 50%;
+}

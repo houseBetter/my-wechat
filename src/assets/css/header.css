@@ -1,0 +1,29 @@
+/*--------- 页头 ---------*/
+.header{
+    height: 45px;
+    background-color:#1b1b1b;
+    position: relative;
+}
+.header-title{
+    height:45px;
+    line-height: 45px;
+    text-align: center;
+    color:#fff;
+    font-size:16px;
+    font-family:Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+
+}
+.header-right-icon{
+    height:45px;
+    line-height: 45px;
+    text-align: center;
+    width:40px;
+    color:#fff;
+    position: absolute;
+    right:0;
+    top: 0;
+
+}
+.header-right-icon i::before{
+    font-size:20px;
+}
