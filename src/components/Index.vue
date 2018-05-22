@@ -24,11 +24,11 @@
                     <input type="text" placeholder="搜索" class="search_input"/>
                 </div>
             </div>
-            <div class="dialog-list">
+            <!-- <div class="dialog-list">
                 
                 <router-link class="dialog-row" tag="div" to="/dialog">   
                     <div class="dialog-row-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/header01.png"/>
+                        <img src="../assets/images/header01.png"/>
                         <i class="icon-state">9</i>
                     </div>
                     <div class="dialog-row-title">
@@ -47,7 +47,7 @@
 
                 <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
+                        <img src="../assets/images/sunquan.jpg">
                     </div>
                     <div class="dialog-row-title">
                         <div class="row-title-nickname">孙权</div>
@@ -64,7 +64,7 @@
                 </router-link>
                 <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
                     </div>
                     <div class="dialog-row-title">
                         <div class="row-title-nickname">孙尚香</div>
@@ -81,7 +81,7 @@
                 </router-link>
                 <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
+                        <img src="../assets/images/guangyu.jpg">
                     </div>
                     <div class="dialog-row-title">
                         <div class="row-title-nickname">关羽</div>
@@ -98,8 +98,8 @@
                 </router-link>
                 <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
+                        <img src="../assets/images/guangyu.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
                     </div>
                     <div class="dialog-row-title">
                         <div class="row-title-nickname">关、孙群</div>
@@ -116,9 +116,9 @@
                 </router-link>
                 <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
+                        <img src="../assets/images/guangyu.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
+                        <img src="../assets/images/sunquan.jpg">
                     </div>
                     <div class="dialog-row-title">
                         <div class="row-title-nickname">第一大群</div>
@@ -135,12 +135,12 @@
                 </router-link>
                 <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
+                        <img src="../assets/images/guangyu.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
+                        <img src="../assets/images/sunquan.jpg">
+                        <img src="../assets/images/guangyu.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
+                        <img src="../assets/images/sunquan.jpg">
                     </div>
                     <div class="dialog-row-title">
                         <div class="row-title-nickname">第二大群</div>
@@ -157,16 +157,16 @@
                 </router-link>
                 <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
+                        <img src="../assets/images/guangyu.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
+                        <img src="../assets/images/sunquan.jpg">
+                        <img src="../assets/images/guangyu.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
+                        <img src="../assets/images/sunquan.jpg">
+                        <img src="../assets/images/sunquan.jpg">
+                        <img src="../assets/images/guangyu.jpg">
+                        <img src="../assets/images/sunshangxiang.jpg">
+                        <img src="../assets/images/sunquan.jpg">
                     </div>
                     <div class="dialog-row-title">
                         <div class="row-title-nickname">第3大群</div>
@@ -181,7 +181,13 @@
                         </div>
                     </div>
                 </router-link>
-            </div>
+            </div> -->
+            <my-msg-box 
+                v-for="msg in MsgList"
+                v-bind:key="msg.type==='user'?msg.userInfo[0].id:msg.groupInfo.gid"
+                :data="msg">
+            </my-msg-box>
+
         </div>
         
         <!-- <div class="footer" ref="footer">
@@ -232,11 +238,13 @@
 <script>
 import MyHeader from './Header'
 import MyFooter from './Footer'
+import MyMsgBox from './MsgBox'
 export default {
   name: "Index",
   components:{
       MyHeader,
-      MyFooter
+      MyFooter,
+      MyMsgBox
   },
   data() {
     return {
@@ -247,7 +255,76 @@ export default {
           "icon-tianjiahaoyou1": false,
           "icon-jiahao": true
         }
-      }
+      },
+      MsgList:[
+          {
+              type:'user',//'user':个人;'group':群组
+              userInfo:[{
+                  uid:'1',
+                  accountId:'1',
+                  uname:'东华',
+                  icon:require('../assets/images/header01.png')
+              }],
+              groupInfo:{
+                  gid:'',
+                  gname:''
+                  
+              },
+              msgInfo:[
+
+              ]
+              
+          },
+          {
+              type:'user',//'user':个人;'group':群组
+              userInfo:[{
+                  uid:'2',
+                  accountId:'2',
+                  uname:'夜华',
+                  icon:require('../assets/images/yehua.jpg')
+              }],
+              groupInfo:{
+                  gid:'',
+                  gname:''
+                  
+              },
+              msgInfo:[
+
+              ]
+              
+          },
+          {
+              type:'group',//'user':个人;'group':群组
+              userInfo:[{
+                  uid:'2',
+                  accountId:'2',
+                  uname:'夜华',
+                  icon:require(`../assets/images/yehua.jpg`)
+              },
+              {
+                  uid:'3',
+                  accountId:'3',
+                  uname:'孙尚香',
+                  icon:require('../assets/images/sunshangxiang.jpg')
+              },
+              {
+                  uid:'4',
+                  accountId:'4',
+                  uname:'关羽',
+                  icon:require('../assets/images/guangyu.jpg')
+              }
+              ],
+              groupInfo:{
+                  gid:'g1',
+                  gname:'第一大群'
+                  
+              },
+              msgInfo:[
+
+              ]
+              
+          }
+      ]
     };
   },
   mounted() {
@@ -271,18 +348,12 @@ export default {
 <style scoped>
 @import "../assets/iconfont/iconfont.css";
 
-/* .wx {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 12px;
-} */
 /*--------- 页中 ----------*/
 .content{
     overflow: scroll;
 }
 /* 对话框 */
-.content .dialog-list .dialog-row{
+/* .content .dialog-list .dialog-row{
     height: 64px;
     padding: 8px;
     background-color:#fff;
@@ -298,7 +369,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* flex-flow: row wrap; */
+
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
@@ -320,11 +391,10 @@ export default {
     
 }
 .content .dialog-list .dialog-row .dialog-row-icon img{
-    /* width: 48px; */
-    /* width:30%; */
+    
     width:29%;
     height:auto;
-    /* height: 48px; */
+
     border-radius: 5px;
     margin:1px;
     flex-grow:2;
@@ -380,7 +450,7 @@ export default {
     transform: scale(.5);
     transform-origin: 0 0;
     width: 200%;
-}
+} */
 
 
 </style>

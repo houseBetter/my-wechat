@@ -1,6 +1,6 @@
 <template>
     <div class="dialog">
-        <div class="header" ref="header">
+        <!-- <div class="header" ref="header">
             <router-link to="/">
                 <div class="header-left">
                     <i class="iconfont icon-fanhui1"></i>
@@ -14,12 +14,19 @@
             <div v-bind:class="{'header-right-icon':cls.hasRightIconCls}">
                 <i  class="iconfont" v-bind:class="cls.iconCls"></i>
             </div>
-        </div>
+        </div> -->
+        <my-header 
+            :headerTitle="headerTitle" 
+            :hasRightIconCls="cls.hasRightIconCls"
+            :iconCls="cls.iconCls"
+            :hasHeaderLeft="cls.hasHeaderLeft"
+            ref="myHeader"
+            ></my-header>
         <div class="content" ref="content">
             <div class="msg-list">
                 <div class="msg-row">
                     <div class="msg-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg">
+                        <img src="../assets/images/baiqian.jpg">
                     </div>
                     <div class="msg-box">
                         曾经有一份真诚的爱情放在我面前，我没有珍惜，等我失去的时候我才后悔莫及，
@@ -31,7 +38,7 @@
                 </div>
                 <div class="msg-row">
                     <div class="msg-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg">
+                        <img src="../assets/images/baiqian.jpg">
                     </div>
                     <div class="msg-box">
                         吃饭了没
@@ -39,7 +46,7 @@
                 </div>
                 <div class="msg-row-me">
                     <div class="msg-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg">
+                        <img src="../assets/images/yehua.jpg">
                     </div>
                     <div class="msg-box">
                         没吃，不知道吃什么，纠结啊！！！！
@@ -47,7 +54,7 @@
                 </div>
                 <div class="msg-row-me">
                     <div class="msg-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg">
+                        <img src="../assets/images/yehua.jpg">
                     </div>
                     <div class="msg-box">
                         你吃了没，有想吃的没？
@@ -55,12 +62,13 @@
                 </div>
                 <div class="msg-row">
                     <div class="msg-icon">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg">
+                        <img src="../assets/images/baiqian.jpg">
                     </div>
                     <div class="msg-box">
                         没吃，去星耀城看看去吧
                     </div>
                 </div>
+                
             </div>
         </div>
         <!-- <my-footer ref="myFooter"></my-footer> -->
@@ -99,26 +107,29 @@ export default {
                   'icon-tianjiahaoyou1':false,
                   'icon-jiahao':false,
                   'icon-huifukuangtianjiachengyuan':true
-              }
+              },
+              hasHeaderLeft: true
           }
       }
   },
   mounted(){
-    const headerViewHeight = this.$refs.header.offsetHeight;
+    // const headerViewHeight = this.$refs.header.offsetHeight;
     // Header作为子组件，this.$refs.myHeader访问子组件，.$refs.header访问子组件中header元素
-    // const headerViewHeight = this.$refs.myHeader.$refs.header.offsetHeight;
+    const headerViewHeight = this.$refs.myHeader.$refs.header.offsetHeight;
     // const footerViewHeight = this.$refs.footer.offsetHeight;
     // 理由同上
     const footerViewHeight = this.$refs.dialogFooter.offsetHeight;
+    // const footerViewHeight = this.$refs.myFooter.$refs.footer.offsetHeight;
     const totalHeight = document.documentElement.clientHeight;
     this.$refs.content.style.height = (totalHeight - headerViewHeight - footerViewHeight) + "px";
+    // console.log(headerViewHeight+','+totalHeight+','+footerViewHeight);
 
   }
 };
 </script>
 <style scoped>
 /* -------- 页头 --------- */
-.header .header-left{
+/* .header .header-left{
     position: absolute;
     top:0;
     left:10px;
@@ -126,7 +137,7 @@ export default {
     width: 55px;
     height: 45px;
     line-height: 45px;
-}
+} */
 
 /*--------- 页中 ---------*/
 .content{
@@ -210,6 +221,8 @@ export default {
     padding: 5px;
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     color: #7d7e83;
 }
 .dialog-footer i{

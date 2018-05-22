@@ -1,5 +1,11 @@
 <template>
         <div class="header" ref="header">
+            <router-link to="/" tag="div" class="header-left" v-show="$props['hasHeaderLeft']">
+                <!-- <div class="header-left"> -->
+                    <i class="iconfont icon-fanhui1"></i>
+                    <span>微信</span>                
+                <!-- </div> -->
+            </router-link>
             <div class="header-title">
                 <span>{{headerTitle}}</span>
             </div>
@@ -14,14 +20,7 @@
 </template>
 <script>
 export default {
-
-    props:['headerTitle','hasRightIconCls','iconCls']
-    // data(){
-    //     return {
-    //         hasIcoCls: this.hasRightIconCls,
-    //         icoCls: this.iconCls
-    //     }
-    // }
+    props:['headerTitle','hasRightIconCls','iconCls','hasHeaderLeft']
 }
 </script>
 

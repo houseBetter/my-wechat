@@ -22,7 +22,7 @@
                 </div>
                 <div class="row-title float">朋友圈</div>
                 <div class="pyq-right">
-                    <div><img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg"></div>
+                    <div><img src="../assets/images/yehua.jpg"></div>
                     <div class="state"></div>
                     <i class="iconfont icon-tongyongzhankaidayuhao"></i>
                 </div>

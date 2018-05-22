@@ -6,6 +6,7 @@ import Contacts from '@/components/Contacts'
 import Find from '@/components/Find'
 import Me from '@/components/Me'
 import Dialog from '@/components/Dialog'
+import MsgBox from '@/components/MsgBox'
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/dialog',
       name: 'Dialog',
       component: Dialog
+    },
+    {
+      path: '/msg-box',
+      name: 'MsgBox',
+      component: MsgBox
     }
 
   ]

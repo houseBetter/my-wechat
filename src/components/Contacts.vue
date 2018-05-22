@@ -46,7 +46,7 @@
                 </div>
                 <div class="friend top-long-solid bottom-long-solid">
                     <div class="float">
-                        <img src="https://sinacloud.net/vue-wechat/images/headers/baiqian.jpg">
+                        <img src="../assets/images/baiqian.jpg">
                     </div>
                     <div ><span class="b-h-l-32">白浅</span></div>
                 </div>
@@ -54,39 +54,39 @@
                     <span>G</span>
                 </div>
                 <div class="friend top-long-solid bottom-long-solid">
-                    <div class="float"><img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg"></div>
+                    <div class="float"><img src="../assets/images/guangyu.jpg"></div>
                     <div ><span class="b-h-l-32">关羽</span></div>
                 </div>
                 <div class="first-word">
                     <span>H</span>
                 </div>
                 <div class="friend top-long-solid bottom-long-solid">
-                    <div class="float"><img src="https://sinacloud.net/vue-wechat/images/headers/huangyueying.jpg"></div>
+                    <div class="float"><img src="../assets/images/huangyueying.jpg"></div>
                     <div ><span class="b-h-l-32">黄月英</span></div>
                 </div>
                 <div class="first-word">
                     <span>L</span>
                 </div>
                 <div class="friend top-long-solid bottom-long-solid">
-                    <div class="float"><img src="https://sinacloud.net/vue-wechat/images/headers/liubei.jpg"></div>
+                    <div class="float"><img src="../assets/images/liubei.jpg"></div>
                     <div ><span class="b-h-l-32">刘备</span></div>
                 </div>
                 <div class="first-word">
                     <span>S</span>
                 </div>
                 <div class="friend top-long-solid">
-                    <div class="float"><img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg"></div>
+                    <div class="float"><img src="../assets/images/sunshangxiang.jpg"></div>
                     <div ><span class="b-h-l-32">孙尚香</span></div>
                 </div>
                 <div class="friend top-short-solid bottom-long-solid">
-                    <div class="float"><img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg"></div>
+                    <div class="float"><img src="../assets/images/sunquan.jpg"></div>
                     <div ><span class="b-h-l-32">孙权</span></div>
                 </div>
                 <div class="first-word">
                     <span>Y</span>
                 </div>
                 <div class="friend top-long-solid bottom-long-solid">
-                    <div class="float"><img src="https://sinacloud.net/vue-wechat/images/headers/yehua.jpg"></div>
+                    <div class="float"><img src="../assets/images/yehua.jpg"></div>
                     <div ><span class="b-h-l-32">夜华</span></div>
                 </div>
             </div>

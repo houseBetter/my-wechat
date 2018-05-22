@@ -18,7 +18,7 @@
         <div class="content" ref="content">
             <div class="content-row-1 m-t-18 top-long-solid bottom-long-solid">
                 <div class="row-1-icon float">
-                    <img src="https://sinacloud.net/vue-wechat/images/headers/header01.png" >
+                    <img src="../assets/images/header01.png" >
                 </div>
                 <div class="row-1-title float">
                     <div class="nickname">东华</div>
