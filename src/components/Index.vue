@@ -45,7 +45,7 @@
                     </div>
                 </router-link>
 
-                <div class="dialog-row">
+                <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/sunquan.jpg">
                     </div>
@@ -61,8 +61,8 @@
                             <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
                         </div>
                     </div>
-                </div>
-                <div class="dialog-row">
+                </router-link>
+                <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
                     </div>
@@ -78,8 +78,8 @@
                             <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
                         </div>
                     </div>
-                </div>
-                <div class="dialog-row">
+                </router-link>
+                <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
                     </div>
@@ -95,8 +95,8 @@
                             <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
                         </div>
                     </div>
-                </div>
-                <div class="dialog-row">
+                </router-link>
+                <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
@@ -113,8 +113,8 @@
                             <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
                         </div>
                     </div>
-                </div>
-                <div class="dialog-row">
+                </router-link>
+                <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
@@ -132,8 +132,8 @@
                             <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
                         </div>
                     </div>
-                </div>
-                <div class="dialog-row">
+                </router-link>
+                <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
@@ -154,8 +154,8 @@
                             <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
                         </div>
                     </div>
-                </div>
-                <div class="dialog-row">
+                </router-link>
+                <router-link class="dialog-row" tag="div" to="/dialog">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/guangyu.jpg">
                         <img src="https://sinacloud.net/vue-wechat/images/headers/sunshangxiang.jpg">
@@ -180,7 +180,7 @@
                             <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
                         </div>
                     </div>
-                </div>
+                </router-link>
             </div>
         </div>
         
