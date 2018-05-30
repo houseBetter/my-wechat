@@ -1,37 +1,42 @@
 <template>
-    <div class="dialog-list">
-            <template v-if="data.type === 'user'">
-                <router-link class="dialog-row" tag="div" to="/dialog">   
-                    <div class="dialog-row-icon">
-                        <img :src="data.userInfo[0].icon"/>
-                        <i class="icon-state">9</i>
-                    </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">{{data.userInfo[0].uname}}</div>
-                        <div class="row-title-msg">
-                                夜华:我试一试
+    <div class="dialog-list" >
+            <template v-if="data.type==='private'" >
+                <template v-for="user in data.users" v-if="user.uid !== data.uid" >
+                    <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:data}}" :key="user.uid"
+                    v-on:click.native="$emit('modify-header',user)"
+                    >
+                        <div class="dialog-row-icon">
+                            <img :src="user.icon"/>
+                            <i class="icon-state">{{data.record.length}}</i>
                         </div>
-                    </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                        <div class="dialog-row-title">
+                            <div class="row-title-nickname">{{user.uname}}</div>
+                            <div class="row-title-msg">
+                                {{data.record[data.record.length-1].uname}}:{{data.record[data.record.length-1].say}}
+                            </div>
                         </div>
-                    </div>
-                </router-link>
+                        <div class="dialog-row-right">
+                            <div class="right-time">22:04</div>
+                            <div class="right-icon">
+                                <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                            </div>
+                        </div>
+                    </router-link>
+                </template>
             </template>
-            <template v-else>
-                <router-link class="dialog-row" tag="div" to="/dialog">
+            <template v-else-if="data.type==='public'">
+                <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:data}}">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
                         <img 
                             :src="user.icon" 
                             v-bind:key="user.uid"
-                            v-for="user in data.userInfo">
+                            v-for="user in data.users">
+                        <i class="icon-state">{{data.record.length}}</i>
                     </div>
                     <div class="dialog-row-title">
-                        <div class="row-title-nickname">{{data.groupInfo.gname}}</div>
+                        <div class="row-title-nickname">{{data.gname}}</div>
                         <div class="row-title-msg">
-                                夜华:我试一试
+                            {{data.record[data.record.length-1].uname}}:{{data.record[data.record.length-1].say}}
                         </div>
                     </div>
                     <div class="dialog-row-right">
@@ -48,18 +53,7 @@
 <script>
 export default {
     name: 'MsgBox',
-    props:['data'],
-    data(){
-        return {
-
-        }
-    },
-    created(){
-        // console.log($props['data']);
-    },
-    mounted(){
-        // console.log($props['data']);
-    }
+    props:['data']
 }
 </script>
 <style scoped>

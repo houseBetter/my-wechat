@@ -9,13 +9,13 @@
                 <i  class="iconfont" v-bind:class="cls.iconCls"></i>
             </div>
         </div> -->
-        <my-header 
+        <!-- <my-header 
             :headerTitle="headerTitle" 
             :hasRightIconCls="cls.hasRightIconCls"
             :iconCls="cls.iconCls"
             ref="myHeader"
-            ></my-header>
-        <div class="content" ref="content">
+            ></my-header> -->
+        <!-- <div class="content" ref="content"> -->
             <div class="content-row-1 m-t-18 top-long-solid bottom-long-solid">
                 <div class="row-1-icon float">
                     <img src="../assets/images/header01.png" >
@@ -73,7 +73,7 @@
                 
             </div>
             
-        </div>
+        <!-- </div> -->
        
         <!-- <div class="footer" ref="footer">
             <div class="nav">
@@ -116,96 +116,67 @@
                 </div>
             </div>
         </div> -->
-        <my-footer ref="myFooter"></my-footer>
+        <!-- <my-footer ref="myFooter"></my-footer> -->
 
     </div>
 </template>
 <script>
-import MyHeader from './Header'
-import MyFooter from './Footer'
 export default {
-  name: "Me",
-  components:{
-      MyHeader,
-      MyFooter
-  },
-  data(){
-      return {
-          headerTitle:'我',
-          cls:{
-              hasRightIconCls: false,
-              iconCls:{
-                  'icon-tianjiahaoyou1':false,
-                  'icon-jiahao':false
-              }
-          }
-      }
-  },
-  mounted(){
-    // const headerViewHeight = this.$refs.header.offsetHeight;
-    // Header作为子组件，this.$refs.myHeader访问子组件，.$refs.header访问子组件中header元素
-    const headerViewHeight = this.$refs.myHeader.$refs.header.offsetHeight;
-    // const footerViewHeight = this.$refs.footer.offsetHeight;
-    // 理由同上
-    const footerViewHeight = this.$refs.myFooter.$refs.footer.offsetHeight;
-    const totalHeight = document.documentElement.clientHeight;
-    this.$refs.content.style.height = (totalHeight - headerViewHeight - footerViewHeight) + "px";
-
-  }
+  name: "Me"
 };
 </script>
 <style scoped>
 /*--------- 页中 ---------*/
-.content{
+.me{
     background-color:#f9f9f9;
     overflow: scroll;
 }
-.content .content-row{
+.me .content-row{
     height: 48px;
     padding: 10px 15px;
     background-color: #fff;
     position: relative;
 }
-.content .content-row-1{
+.me .content-row-1{
     height: 80px;
     padding: 10px 15px;
     background-color: #fff;
     position: relative;
 }
-.content .content-row-1 .row-1-icon{
+.me .content-row-1 .row-1-icon{
     margin-right: 10px;
     width: 70px;
     height: 60px;
     color: green;
 }
-.content .content-row-1 .row-1-icon img{
+.me .content-row-1 .row-1-icon img{
     width: 60px;
     height: 60px;
     border-radius: 5px;
 }
-.content .content-row-1 .row-1-title .nickname{
+.me .content-row-1 .row-1-title .nickname{
     font-size: 16px;
     margin-bottom: 5px;
 
 }
-.content .content-row-1 .row-1-title .wx-num{
+.me .content-row-1 .row-1-title .wx-num{
     font-size:13px;
 }
-.content .content-row-1 .right{
+.me .content-row-1 .right{
     text-align: right;
     height: 60px;
     line-height: 60px;
 }
-.content .content-row-1 .right i[class*='icon-erweima']::before{
+.me .content-row-1 .right i[class*='icon-erweima']::before{
     font-size: 20px;
 }
-.content .content-row .row-icon{
+.me .content-row .row-icon{
     margin-right: 10px;
     width: 30px;
     height: 20px;
     color: green;
 }
-.content .content-row .row-icon img{
+.me .content-row .row-icon img{
     width: 60px;
     height: 60px;
 }

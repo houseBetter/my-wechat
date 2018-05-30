@@ -183,8 +183,8 @@
                 </router-link>
             </div> -->
             <my-msg-box 
-                v-for="msg in MsgList"
-                v-bind:key="msg.type==='user'?msg.userInfo[0].id:msg.groupInfo.gid"
+                v-for="msg in msgList"
+                v-bind:key="msg.type==='private'?msg.account.uid:msg.gid"
                 :data="msg">
             </my-msg-box>
 
@@ -236,15 +236,16 @@
     </div>
 </template>
 <script>
-import MyHeader from './Header'
-import MyFooter from './Footer'
-import MyMsgBox from './MsgBox'
+import MyHeader from "./Header";
+import MyFooter from "./Footer";
+import MyMsgBox from "./MsgBox";
+
 export default {
   name: "Index",
-  components:{
-      MyHeader,
-      MyFooter,
-      MyMsgBox
+  components: {
+    MyHeader,
+    MyFooter,
+    MyMsgBox
   },
   data() {
     return {
@@ -256,74 +257,178 @@ export default {
           "icon-jiahao": true
         }
       },
-      MsgList:[
-          {
-              type:'user',//'user':个人;'group':群组
-              userInfo:[{
-                  uid:'1',
-                  accountId:'1',
-                  uname:'东华',
-                  icon:require('../assets/images/header01.png')
-              }],
-              groupInfo:{
-                  gid:'',
-                  gname:''
-                  
-              },
-              msgInfo:[
-
-              ]
-              
+      msgList: [
+        {
+          uid: "yehua",
+          account:{
+              uid: "baiqian",
+              uname: "白浅",
+              icon: require("../assets/images/baiqian.jpg")
           },
-          {
-              type:'user',//'user':个人;'group':群组
-              userInfo:[{
-                  uid:'2',
-                  accountId:'2',
-                  uname:'夜华',
-                  icon:require('../assets/images/yehua.jpg')
-              }],
-              groupInfo:{
-                  gid:'',
-                  gname:''
-                  
-              },
-              msgInfo:[
-
-              ]
-              
+          gid: "",
+          gname: "",
+          type: "private", //'private':私聊,'public':群聊
+          users: [
+            {
+              uid: "yehua",
+              uname: "夜华",
+              icon: require("../assets/images/yehua.jpg")
+            },
+            {
+              uid: "baiqian",
+              uname: "白浅",
+              icon: require("../assets/images/baiqian.jpg")
+            }
+          ],
+          record: [
+            {
+              uid: "baiqian",
+              uname:'白浅',
+              isMe:false,
+              icon: require("../assets/images/baiqian.jpg"),
+              say: "吃饭了没"
+            },
+            {
+              uid: "yehua",
+              uname:'夜华',
+              isMe:true,
+              icon: require("../assets/images/yehua.jpg"),
+              say: "没"
+            },
+            {
+              uid: "baiqian",
+              uname:'白浅',
+              isMe:false,
+              icon: require("../assets/images/baiqian.jpg"),
+              say: "一起吃吧"
+            },
+            {
+              uid: "yehua",
+              uname:'夜华',
+              isMe:true,
+              icon: require("../assets/images/yehua.jpg"),
+              say: "好"
+            }
+          ]
+        },
+        {
+          uid: "yehua", //当前账号所属用户
+          account:{
+              uid:"",
+              uname:"",
+              icon:''
           },
-          {
-              type:'group',//'user':个人;'group':群组
-              userInfo:[{
-                  uid:'2',
-                  accountId:'2',
-                  uname:'夜华',
-                  icon:require(`../assets/images/yehua.jpg`)
-              },
-              {
-                  uid:'3',
-                  accountId:'3',
-                  uname:'孙尚香',
-                  icon:require('../assets/images/sunshangxiang.jpg')
-              },
-              {
-                  uid:'4',
-                  accountId:'4',
-                  uname:'关羽',
-                  icon:require('../assets/images/guangyu.jpg')
-              }
-              ],
-              groupInfo:{
-                  gid:'g1',
-                  gname:'第一大群'
-                  
-              },
-              msgInfo:[
-
-              ]
-              
-          }
+          gid: "1group",
+          gname: "第1大群",
+          type: "public", //'private':私聊,'public':群聊
+          users: [
+            {
+              uid: "liubei",
+              uname: "刘备",
+              icon: require("../assets/images/liubei.jpg")
+            },
+            {
+              uid: "guangyu",
+              uname: "关羽",
+              icon: require("../assets/images/guangyu.jpg")
+            },
+            {
+              uid: "yehua",
+              uname: "夜华",
+              icon: require("../assets/images/yehua.jpg")
+            }
+          ],
+          record: [
+            {
+              uid: "liubei",
+              uid: "刘备",
+              isMe:false,
+              icon: require("../assets/images/liubei.jpg"),
+              say: "贤弟！"
+            },
+            {
+              uid: "guangyu",
+              uname: "关羽",
+              isMe:false,
+              icon: require("../assets/images/guangyu.jpg"),
+              say: "大哥！！"
+            },
+            {
+              uid: "liubei",
+              uid: "刘备",
+              isMe:false,
+              icon: require("../assets/images/liubei.jpg"),
+              say: "贤弟！！！"
+            },
+            {
+              uid: "guangyu",
+              uname: "关羽",
+              isMe:false,
+              icon: require("../assets/images/guangyu.jpg"),
+              say: "大哥！！"
+            },
+            {
+              uid: "liubei",
+              uid: "刘备",
+              isMe:false,
+              icon: require("../assets/images/liubei.jpg"),
+              say: "贤弟！！！！"
+            },
+            {
+              uid: "guangyu",
+              uname: "关羽",
+              isMe:false,
+              icon: require("../assets/images/guangyu.jpg"),
+              say: "你有病吧！"
+            },
+            {
+              uid: "yehua",
+              uname: "夜华",
+              isMe:true,
+              icon: require("../assets/images/yehua.jpg"),
+              say: "一群2货"
+            }
+          ]
+        },
+        {
+          uid: "yehua",
+          account:{
+              uid:"guangyu",
+              uname:"关羽",
+              icon:require("../assets/images/guangyu.jpg")
+          },
+          gid: "",
+          gname: "",
+          type: "private", //'private':私聊,'public':群聊
+          users: [
+            {
+              uid: "yehua",
+              uname: "夜华",
+              icon: require("../assets/images/yehua.jpg")
+            },
+            {
+              uid: "guangyu",
+              uname: "关羽",
+              icon: require("../assets/images/guangyu.jpg")
+            }
+          ],
+          record: [
+            {
+              uid: "yehua",
+              uname: "夜华",
+              isMe:true,
+              icon: require("../assets/images/yehua.jpg"),
+              say: "小关"
+            },
+            {
+              uid: "guangyu",
+              uname: "关羽",
+              isMe:false,
+              icon: require("../assets/images/guangyu.jpg"),
+              say: "不在"
+            }
+          ]
+        }
       ]
     };
   },
@@ -332,15 +437,12 @@ export default {
     // const headerViewHeight = this.$refs.header.offsetHeight;
     // Header作为子组件，this.$refs.myHeader访问子组件，.$refs.header访问子组件中header元素
     const headerViewHeight = this.$refs.myHeader.$refs.header.offsetHeight;
-     // const footerViewHeight = this.$refs.footer.offsetHeight;
+    // const footerViewHeight = this.$refs.footer.offsetHeight;
     // 理由同上
     const footerViewHeight = this.$refs.myFooter.$refs.footer.offsetHeight;
     const totalHeight = document.documentElement.clientHeight;
     this.$refs.content.style.height =
       totalHeight - headerViewHeight - footerViewHeight + "px";
-    
-
-
   }
 };
 </script>
@@ -349,8 +451,8 @@ export default {
 @import "../assets/iconfont/iconfont.css";
 
 /*--------- 页中 ----------*/
-.content{
-    overflow: scroll;
+.content {
+  overflow: scroll;
 }
 /* 对话框 */
 /* .content .dialog-list .dialog-row{
@@ -451,8 +553,6 @@ export default {
     transform-origin: 0 0;
     width: 200%;
 } */
-
-
 </style>
 
 

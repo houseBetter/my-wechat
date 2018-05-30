@@ -1,21 +1,6 @@
 <template>
-    <div class="contacts">
-        <!-- <div class="header" ref="header">
-            <div class="header-title">
-                <span>{{headerTitle}}</span>
-            </div>
-           
-            <div v-bind:class="{'header-right-icon':cls.hasRightIconCls}">
-                <i  class="iconfont" v-bind:class="cls.iconCls"></i>
-            </div>
-        </div> -->
-        <my-header 
-            :headerTitle="headerTitle" 
-            :hasRightIconCls="cls.hasRightIconCls"
-            :iconCls="cls.iconCls"
-            ref="myHeader"
-            ></my-header>
-        <div class="content" ref="content">
+    <div class="find">
+        <!-- <div class="content" ref="content"> -->
             <div class="content-row m-t-18 top-long-solid bottom-long-solid">
                 <div class="row-icon float">
                     <i class="iconfont icon-pengyouquan"></i>
@@ -57,7 +42,7 @@
                 
             </div>
             
-        </div>
+        <!-- </div> -->
        
         <!-- <div class="footer" ref="footer">
             <div class="nav">
@@ -100,140 +85,107 @@
                 </div>
             </div>
         </div> -->
-        <my-footer ref="myFooter"></my-footer>
+        <!-- <my-footer ref="myFooter"></my-footer> -->
     </div>
 </template>
 <script>
-import MyHeader from './Header'
-import MyFooter from './Footer'
 export default {
-  name: "Find",
-  components:{
-      MyHeader,
-      MyFooter
-  },
-  data(){
-      return {
-          headerTitle:'发现',
-          cls:{
-              hasRightIconCls: false,
-              iconCls:{
-                  'icon-tianjiahaoyou1':false,
-                  'icon-jiahao':false
-              }
-          }
-      }
-  },
-  mounted(){
-      // const headerViewHeight = this.$refs.header.offsetHeight;
-    // Header作为子组件，this.$refs.myHeader访问子组件，.$refs.header访问子组件中header元素
-    const headerViewHeight = this.$refs.myHeader.$refs.header.offsetHeight;
-    // const footerViewHeight = this.$refs.footer.offsetHeight;
-    // 理由同上
-    const footerViewHeight = this.$refs.myFooter.$refs.footer.offsetHeight;
-    const totalHeight = document.documentElement.clientHeight;
-    this.$refs.content.style.height = (totalHeight - headerViewHeight - footerViewHeight) + "px";
-    // console.log('hH:'+headerViewHeight+',fH:'+footerViewHeight+',tH:'+totalHeight+',h:'+this.$refs.content.style.height);
-  }
+  name: "Find"
 };
 </script>
 <style scoped>
-
 /*--------- 页中 ---------*/
-.content{
-    background-color:#f9f9f9;
-    overflow: scroll;
+.find {
+  background-color: #f9f9f9;
+  overflow: scroll;
 }
-.content .content-row{
-    height: 48px;
-    padding: 10px 15px;
-    background-color: #fff;
-    position: relative;
+.find .content-row {
+  height: 48px;
+  padding: 10px 15px;
+  background-color: #fff;
+  position: relative;
 }
-.content .content-row .row-icon{
-    margin-right: 10px;
-    width: 30px;
-    height: 20px;
-    color: green;
+.find .content-row .row-icon {
+  margin-right: 10px;
+  width: 30px;
+  height: 20px;
+  color: green;
 }
-.content .content-row .pyq-right{
-    float:right;
-    position: relative;
-    width: 41px;
-    padding-right: 13px;
+.find .content-row .pyq-right {
+  float: right;
+  position: relative;
+  width: 41px;
+  padding-right: 13px;
 }
-.content .content-row .pyq-right .state{
-
-    width:10px;
-    height:10px;
-    border-radius: 50%;
-    background-color:red;
-    position: absolute;
-    right:6px;
-    top:-4px;
-}
-
-.content .content-row .pyq-right div{
-    width: 28px;
-    height: 28px;
-}
-.content .content-row .pyq-right img{
-    width: 28px;
-    height: 28px;
-}
-.content .content-row .pyq-right i{
-    position: absolute;
-    right: -6px;
-    top: 5px;
-    color:#c8c8cd;
-}
-.top-long-solid::before{
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-color: #d9d9d9;
-    height: 1px;
-    transform: scale(0.5);
-    transform-origin: 0 0;
-    width: 200%;
-
-}
-.bottom-long-solid::after{
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    /* background-color: #d9d9d9; */
-    border-top: 1px solid #d9d9d9;
-    height: 1px;
-    transform: scale(0.5);
-    transform-origin: 0 0;
-    width: 200%;
-}
-.top-short-solid::before{
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;
-    border-top: 1px solid #d9d9d9;
-    color: #d9d9d9;
-    left: 15px;
-    transform: scale(0.5);
-    transform-origin: 0 0;
-    width: 200%;
-}
-.m-t-18{
-    margin-top: 18px;
-}
-.float{
-    float: left;
+.find .content-row .pyq-right .state {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  right: 6px;
+  top: -4px;
 }
 
+.find .content-row .pyq-right div {
+  width: 28px;
+  height: 28px;
+}
+.find .content-row .pyq-right img {
+  width: 28px;
+  height: 28px;
+}
+.find .content-row .pyq-right i {
+  position: absolute;
+  right: -6px;
+  top: 5px;
+  color: #c8c8cd;
+}
+.top-long-solid::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #d9d9d9;
+  height: 1px;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  width: 200%;
+}
+.bottom-long-solid::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  /* background-color: #d9d9d9; */
+  border-top: 1px solid #d9d9d9;
+  height: 1px;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  width: 200%;
+}
+.top-short-solid::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #d9d9d9;
+  color: #d9d9d9;
+  left: 15px;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  width: 200%;
+}
+.m-t-18 {
+  margin-top: 18px;
+}
+.float {
+  float: left;
+}
 </style>
 
 

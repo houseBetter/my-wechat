@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-import Index from '@/components/Index'
+// import Index from '@/components/Index'
 import Contacts from '@/components/Contacts'
 import Find from '@/components/Find'
 import Me from '@/components/Me'
 import Dialog from '@/components/Dialog'
 import MsgBox from '@/components/MsgBox'
+import DialogBox from '@/components/DialogBox'
+// import Header from '@/components/Header'
+import Content from '@/components/Content'
+// import Vuex from '@/components/Vuex'
 
 Vue.use(Router)
 
@@ -17,10 +21,15 @@ export default new Router({
     //   name: 'HelloWorld',
     //   component: HelloWorld
     // },
+    // {
+    //   path: '/',
+    //   name: 'Index',
+    //   component: Index
+    // },
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      name: 'Content',
+      component: Content
     },
     {
       path: '/contacts',
@@ -45,6 +54,11 @@ export default new Router({
       path: '/msg-box',
       name: 'MsgBox',
       component: MsgBox
+    },
+    {
+      path: '/dialog-box/:data',
+      name: 'DialogBox',
+      component: DialogBox
     }
 
   ]
