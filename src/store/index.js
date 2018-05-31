@@ -18,13 +18,13 @@ const store = new Vuex.Store({
         },
         // 头部状态
         headerSet:{
-
-            headerTitle: "微信",
+            toPath: '/',
+            headerTitle: '微信',
             cls: {
             hasRightIconCls: true,
             iconCls: {
-                "icon-tianjiahaoyou1": false,
-                "icon-jiahao": true
+                'icon-tianjiahaoyou1': false,
+                'icon-jiahao': true
                 }
             },
             hasHeaderLeft:false,
@@ -35,6 +35,7 @@ const store = new Vuex.Store({
             {
                 uid: 'yehua',
                 account: {
+                    fw:'B',//首字母
                     uid: 'baiqian',
                     uname: '白浅',
                     icon: require('../assets/images/baiqian.jpg')
@@ -88,6 +89,7 @@ const store = new Vuex.Store({
             {
                 uid: 'yehua', //当前账号所属用户
                 account: {
+                    fw:'',
                     uid: '',
                     uname: '',
                     icon: ''
@@ -167,6 +169,7 @@ const store = new Vuex.Store({
             {
                 uid: 'yehua',
                 account: {
+                    fw:'G',
                     uid: 'guangyu',
                     uname: '关羽',
                     icon: require('../assets/images/guangyu.jpg')
@@ -202,7 +205,102 @@ const store = new Vuex.Store({
                         say: '不在'
                     }
                 ]
-            }
+            },
+            {
+                      uid: 'yehua',
+                      account:{
+                          fw:'H',
+                          uid: 'huangyueying',
+                          uname: '黄月英',
+                          icon:require('../assets/images/huangyueying.jpg')
+                      },
+                      gid:'',
+                      gname:'',
+                      type: 'private', //'private':私聊,'public':群聊
+                      users: [
+                        {
+                          uid: 'yehua',
+                          uname: '夜华',
+                          icon: require('../assets/images/yehua.jpg')
+                        },
+                        {
+                          uid: 'huangyueying',
+                          uname: '黄月英',
+                          icon:require('../assets/images/huangyueying.jpg')
+                        }
+                      ],
+                      record: []
+                    },
+                    {
+                              uid: 'yehua',
+                              account:{
+                                  fw:'L',
+                                  uid:'liubei',
+                                  uname:'刘备',
+                                  icon:require('../assets/images/liubei.jpg')
+                              },
+                              gid:'',
+                              gname:'',
+                              type: 'private', //'private':私聊,'public':群聊
+                              users: [
+                                {
+                                  uid: 'yehua',
+                                  uname: '夜华',
+                                  icon: require('../assets/images/yehua.jpg')
+                                },
+                                {
+                                  uid: 'liubei',
+                                  uname: '刘备',
+                                  icon:require('../assets/images/liubei.jpg')
+                                }
+                              ],
+                              record: []
+                            },
+                            {
+                              uid: 'yehua',
+                              account:{
+                                  fw: 'S',
+                                  uid: 'sunshangxiang',
+                                  uname: '孙尚香',
+                                  icon:require('../assets/images/sunshangxiang.jpg')
+                              },
+                              gid:'',
+                              gname:'',
+                              type: 'private', //'private':私聊,'public':群聊
+                              users: [
+                                {
+                                  uid: 'yehua',
+                                  uname: '夜华',
+                                  icon: require('../assets/images/yehua.jpg')
+                                },
+                                {
+                                  uid: 'sunshangxiang',
+                                  uname: '孙尚香',
+                                  icon:require('../assets/images/sunshangxiang.jpg')
+                                }
+                              ],
+                              record: []
+                            },
+                            {
+                              uid: 'yehua',
+                              account:{
+                                  fw: 'Y',
+                                  uid: 'yehua',
+                                  uname: '夜华',
+                                  icon:require('../assets/images/yehua.jpg')
+                              },
+                              gid:'',
+                              gname:'',
+                              type: 'private', //'private':私聊,'public':群聊
+                              users: [
+                                {
+                                  uid: 'yehua',
+                                  uname: '夜华',
+                                  icon: require('../assets/images/yehua.jpg')
+                                }
+                              ],
+                              record: []
+                            }
         ]
 
     },
@@ -218,7 +316,51 @@ const store = new Vuex.Store({
         }
     },
     actions: {},
-    getters: {}
+    getters: {
+        getAccountsBySort:state => {//通讯录按字母排序
+            let arry = Array.from(state.msgList).filter(ele => ele.type === 'private');
+            return arry.sort(function(a,b){
+                if(a.account.fw<b.account.fw) return -1;
+                if(a.account.fw>b.account.fw) return 1;
+                return 0;
+            })
+        },
+        getFWBySort:state => {//通讯录中人名首字母按字母顺序排
+            let arry = Array.from(state.msgList).filter(ele => ele.type === 'private');
+            arry.sort(function(a,b){
+                if(a.account.fw<b.account.fw) return -1;
+                if(a.account.fw>b.account.fw) return 1;
+                return 0;
+            });
+            let fwArray = [];
+            for(let i = 0;i<arry.length;i++){
+                if(i == 0){
+                    fwArray[i] = arry[i].account.fw;
+                }
+                let len = fwArray.length;
+                for(let j =0;j<len;j++){
+                    if(fwArray[j] == arry[i].account.fw) break;
+                    if(j==len-1){
+                        fwArray.push(arry[i].account.fw)
+                    }
+
+                }
+                
+            }
+            return fwArray;
+        },
+        getMsgByTypeAndId:(state) => (type,id) =>{
+            let arry = state.msgList;
+            return arry.filter(ele => {
+                
+               return (type == ele.type && ele.account.uid == id) ||
+                (type == ele.type && ele.gid == id)
+            })[0];
+            
+        }
+
+        
+    }
 });
 
 export default store

@@ -6,6 +6,7 @@
       :iconCls="headerSet.cls.iconCls"
       :headerLeftTitle="headerSet.headerLeftTitle"
       :hasHeaderLeft="headerSet.hasHeaderLeft"
+      :toPath="headerSet.toPath"
       ref="myHeader"
     ></my-header>
     <div class="content" ref="content" >
@@ -50,7 +51,8 @@ export default {
         iconCls: {
           "icon-tianjiahaoyou1": false,
           "icon-jiahao": true
-        }
+        },
+        headerLeftTitle:''
       }
       };
       let name = '';
@@ -98,8 +100,10 @@ export default {
           break;
       }
       headerData.headerTitle = name;
+      headerData.headerLeftTitle = name;
       headerData.cls.hasRightIconCls = hasRightIconCls;
       headerData.cls.iconCls = iconCls;
+      headerData.toPath = to.path;
       this.modifyHeaderSet(headerData);
       this.$store.commit('modifySearchSet',{isShow:isSearchShow});
       this.$store.commit('modifyFooterNavSet',{isShow:true});
@@ -107,6 +111,7 @@ export default {
     }
 
   },
+  
   mounted() {
     
     //   固定底部导航区可视区位置

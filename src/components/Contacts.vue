@@ -19,12 +19,12 @@
                 </div>
             </div>
         <div class="contacts-friends">
-                <template v-for="msg in msgList">
+                <template v-for="msg in getAccountsBySort" v-if="msg.type === 'private'">
                      <div class="first-word" :key="'fw'+msg.account.uid">
-                        <span>B</span>
+                        <span>{{msg.account.fw}}</span>
                     </div>
                     <router-link tag="div" class="friend top-long-solid bottom-long-solid"
-                        :to="{name:'DialogBox',params:{data:msg}}"
+                        :to="{name:'DialogBox',params:{data:{type:msg.type,id:msg.account.uid}}}"
                         :key="msg.account.uid"
                     >
                         <div class="float">
@@ -34,27 +34,29 @@
                     </router-link>
                 </template>
             </div>
-        <div class="first-word-bar">
+        <!-- <div class="first-word-bar">
             <span>B</span>
             <span>G</span>
             <span>H</span>
             <span>L</span>
             <span>S</span>
             <span>Y</span>
+        </div> -->
+         <div class="first-word-bar">
+            <span v-for="fw in getFWBySort" v-bind:key="fw">{{fw}}</span>
         </div>
       
     </div>
 </template>
 <script>
-import MyHeader from "./Header";
-import MyFooter from "./Footer";
+import {mapState} from 'vuex'
+import {mapGetters} from 'vuex'
 export default {
   name: "Contacts",
-  components: {
-    MyHeader,
-    MyFooter
-  },
-  computed: {},
+  computed: {
+      ...mapState(['msgList']),
+      ...mapGetters(['getAccountsBySort','getFWBySort'])
+    },
   data() {
     return {
       headerTitle: "通讯录",
@@ -64,148 +66,148 @@ export default {
           "icon-tianjiahaoyou1": true,
           "icon-jiahao": false
         }
-      },
-      msgList: [
-        {
-          uid: "yehua",//表示当前自己
-          account:{
-              uid:"baiqian",//表示账号所属用户
-              uname:"白浅",
-              icon:require("../assets/images/baiqian.jpg")
-          },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
-          users: [
-            {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
-            },
-            {
-              uid: "baiqian",
-              uname: "白浅",
-              icon: require("../assets/images/baiqian.jpg")
-            }
-          ],
-          record: []
-        },
-        {
-          uid: "yehua",//表示当前自己
-          account:{
-              uid:"guangyu",//表示账号所属用户
-              uname:"关羽",
-              icon:require("../assets/images/guangyu.jpg")
-          },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
-          users: [
-            {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
-            },
-            {
-              uid:"guangyu",
-              uname:"关羽",
-              icon:require("../assets/images/guangyu.jpg")
-            }
-          ],
-          record: []
-        },
-        {
-          uid: "yehua",
-          account:{
-              uid:"huangyueying",
-              uname:"黄月英",
-              icon:require("../assets/images/huangyueying.jpg")
-          },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
-          users: [
-            {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
-            },
-            {
-              uid:"huangyueying",
-              uname:"黄月英",
-              icon:require("../assets/images/huangyueying.jpg")
-            }
-          ],
-          record: []
-        },
-        {
-          uid: "yehua",
-          account:{
-              uid:"liubei",
-              uname:"刘备",
-              icon:require("../assets/images/liubei.jpg")
-          },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
-          users: [
-            {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
-            },
-            {
-              uid:"liubei",
-              uname:"刘备",
-              icon:require("../assets/images/liubei.jpg")
-            }
-          ],
-          record: []
-        },
-        {
-          uid: "yehua",
-          account:{
-              uid:"sunshangxiang",
-              uname:"孙尚香",
-              icon:require("../assets/images/sunshangxiang.jpg")
-          },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
-          users: [
-            {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
-            },
-            {
-              uid:"sunshangxiang",
-              uname:"孙尚香",
-              icon:require("../assets/images/sunshangxiang.jpg")
-            }
-          ],
-          record: []
-        },
-        {
-          uid: "yehua",
-          account:{
-              uid:"yehua",
-              uname:"夜华",
-              icon:require("../assets/images/yehua.jpg")
-          },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
-          users: [
-            {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
-            }
-          ],
-          record: []
-        }
-      ]
+      }
+    //   msgList: [
+    //     {
+    //       uid: "yehua",//表示当前自己
+    //       account:{
+    //           uid:"baiqian",//表示账号所属用户
+    //           uname:"白浅",
+    //           icon:require("../assets/images/baiqian.jpg")
+    //       },
+    //       gid: "",
+    //       gname: "",
+    //       type: "private", //'private':私聊,'public':群聊
+    //       users: [
+    //         {
+    //           uid: "yehua",
+    //           uname: "夜华",
+    //           icon: require("../assets/images/yehua.jpg")
+    //         },
+    //         {
+    //           uid: "baiqian",
+    //           uname: "白浅",
+    //           icon: require("../assets/images/baiqian.jpg")
+    //         }
+    //       ],
+    //       record: []
+    //     },
+    //     {
+    //       uid: "yehua",//表示当前自己
+    //       account:{
+    //           uid:"guangyu",//表示账号所属用户
+    //           uname:"关羽",
+    //           icon:require("../assets/images/guangyu.jpg")
+    //       },
+    //       gid: "",
+    //       gname: "",
+    //       type: "private", //'private':私聊,'public':群聊
+    //       users: [
+    //         {
+    //           uid: "yehua",
+    //           uname: "夜华",
+    //           icon: require("../assets/images/yehua.jpg")
+    //         },
+    //         {
+    //           uid:"guangyu",
+    //           uname:"关羽",
+    //           icon:require("../assets/images/guangyu.jpg")
+    //         }
+    //       ],
+    //       record: []
+    //     },
+    //     {
+    //       uid: "yehua",
+    //       account:{
+    //           uid:"huangyueying",
+    //           uname:"黄月英",
+    //           icon:require("../assets/images/huangyueying.jpg")
+    //       },
+    //       gid: "",
+    //       gname: "",
+    //       type: "private", //'private':私聊,'public':群聊
+    //       users: [
+    //         {
+    //           uid: "yehua",
+    //           uname: "夜华",
+    //           icon: require("../assets/images/yehua.jpg")
+    //         },
+    //         {
+    //           uid:"huangyueying",
+    //           uname:"黄月英",
+    //           icon:require("../assets/images/huangyueying.jpg")
+    //         }
+    //       ],
+    //       record: []
+    //     },
+    //     {
+    //       uid: "yehua",
+    //       account:{
+    //           uid:"liubei",
+    //           uname:"刘备",
+    //           icon:require("../assets/images/liubei.jpg")
+    //       },
+    //       gid: "",
+    //       gname: "",
+    //       type: "private", //'private':私聊,'public':群聊
+    //       users: [
+    //         {
+    //           uid: "yehua",
+    //           uname: "夜华",
+    //           icon: require("../assets/images/yehua.jpg")
+    //         },
+    //         {
+    //           uid:"liubei",
+    //           uname:"刘备",
+    //           icon:require("../assets/images/liubei.jpg")
+    //         }
+    //       ],
+    //       record: []
+    //     },
+    //     {
+    //       uid: "yehua",
+    //       account:{
+    //           uid:"sunshangxiang",
+    //           uname:"孙尚香",
+    //           icon:require("../assets/images/sunshangxiang.jpg")
+    //       },
+    //       gid: "",
+    //       gname: "",
+    //       type: "private", //'private':私聊,'public':群聊
+    //       users: [
+    //         {
+    //           uid: "yehua",
+    //           uname: "夜华",
+    //           icon: require("../assets/images/yehua.jpg")
+    //         },
+    //         {
+    //           uid:"sunshangxiang",
+    //           uname:"孙尚香",
+    //           icon:require("../assets/images/sunshangxiang.jpg")
+    //         }
+    //       ],
+    //       record: []
+    //     },
+    //     {
+    //       uid: "yehua",
+    //       account:{
+    //           uid:"yehua",
+    //           uname:"夜华",
+    //           icon:require("../assets/images/yehua.jpg")
+    //       },
+    //       gid: "",
+    //       gname: "",
+    //       type: "private", //'private':私聊,'public':群聊
+    //       users: [
+    //         {
+    //           uid: "yehua",
+    //           uname: "夜华",
+    //           icon: require("../assets/images/yehua.jpg")
+    //         }
+    //       ],
+    //       record: []
+    //     }
+    //   ]
     };
   }
 };

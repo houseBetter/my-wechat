@@ -1,6 +1,6 @@
 <template>
         <div class="header" ref="header">
-            <router-link to="/" tag="div" class="header-left" v-show="hasHeaderLeft">
+            <router-link :to="toPath" tag="div" class="header-left" v-show="hasHeaderLeft">
                 <!-- <div class="header-left"> -->
                     <i class="iconfont icon-fanhui1"></i>
                     <span>{{headerLeftTitle}}</span>                
@@ -18,7 +18,7 @@
 </template>
 <script>
 export default {
-    props:['headerTitle','hasRightIconCls','iconCls','hasHeaderLeft','headerLeftTitle']
+    props:['headerTitle','hasRightIconCls','iconCls','hasHeaderLeft','headerLeftTitle','toPath']
     
 }
 </script>

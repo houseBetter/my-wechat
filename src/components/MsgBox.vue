@@ -1,8 +1,8 @@
 <template>
     <div class="dialog-list" >
-            <template v-if="data.type==='private'" >
+            <template v-if="data.type==='private' && data.record.length > 0" >
                 <template v-for="user in data.users" v-if="user.uid !== data.uid" >
-                    <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:data}}" :key="user.uid"
+                    <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:{type:data.type,id:data.account.uid}}}" :key="user.uid"
                     v-on:click.native="$emit('modify-header',user)"
                     >
                         <div class="dialog-row-icon">
@@ -24,8 +24,8 @@
                     </router-link>
                 </template>
             </template>
-            <template v-else-if="data.type==='public'">
-                <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:data}}">
+            <template v-else-if="data.type==='public' && data.record.length > 0">
+                <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:{type:data.type,id:data.gid}}}">
                     <div class="dialog-row-icon" ref="dialogRowIcon">
                         <img 
                             :src="user.icon" 

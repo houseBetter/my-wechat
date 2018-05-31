@@ -18,10 +18,10 @@
         <!-- <div class="content" ref="content"> -->
             <div class="content-row-1 m-t-18 top-long-solid bottom-long-solid">
                 <div class="row-1-icon float">
-                    <img src="../assets/images/header01.png" >
+                    <img src="../assets/images/yehua.jpg" >
                 </div>
                 <div class="row-1-title float">
-                    <div class="nickname">东华</div>
+                    <div class="nickname">夜华</div>
                     <div class="wx-num">微信号:abcde</div>
                 </div>
                 <div class="right">

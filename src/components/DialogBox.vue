@@ -2,7 +2,8 @@
     <div class="dialog" ref="dialog">
         <!-- <div class="content" ref="content"> -->
             <div class="msg-list">
-                <template v-for="(record,index) in this.$route.params.data.record">
+                <!-- <template v-for="(record,index) in this.$route.params.data.record"> -->
+                    <template v-for="(record,index) in getMsgByTypeAndId.record">
                     <div :class="{'msg-row':!record.isMe,'msg-row-me':record.isMe}" 
                         :key="index"                      
                     >
@@ -34,13 +35,11 @@
     </div>
 </template>
 <script>
-import MyFooter from './Footer'
+// import MyFooter from './Footer'
 import {mapState} from 'vuex'
+import {mapGetters} from 'vuex'
 export default {
   name: "Dialog",
-  components: {
-    MyFooter
-  },
   created(){
     let  {...headerSet} ={
         headerTitle : this.headerTitle,
@@ -72,20 +71,29 @@ export default {
   },
   computed:{
     ...mapState(['headerSet']),
+    getMsgByTypeAndId(){
+        return this.$store.getters.getMsgByTypeAndId(this.type,this.id)
+    },
     headerTitle: function() {
-        const data = this.$route.params.data;
-        const type = data.type;
-        const account = data.account;
+        
+        
         let title = ''
-        if (type === "private") {
-            title = account.uname;
+        if (this.type === "private") {
+            title = this.getMsgByTypeAndId.account.uname;
         }
-        if (type === "public") {
-            title = data.gname;
+        if (this.type === "public") {
+            title = this.getMsgByTypeAndId.gname;
         }
         return title
     }
+
     
+  },
+  data(){
+      return {
+          type: this.$route.params.data.type,
+          id: this.$route.params.data.id
+      }
   }
 };
 </script>
