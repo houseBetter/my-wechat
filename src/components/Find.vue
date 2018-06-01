@@ -1,96 +1,50 @@
 <template>
-    <div class="find">
-        <!-- <div class="content" ref="content"> -->
-            <div class="content-row m-t-18 top-long-solid bottom-long-solid">
-                <div class="row-icon float">
-                    <i class="iconfont icon-pengyouquan"></i>
-                </div>
-                <div class="row-title float">朋友圈</div>
-                <div class="pyq-right">
-                    <div><img src="../assets/images/yehua.jpg"></div>
-                    <div class="state"></div>
-                    <i class="iconfont icon-tongyongzhankaidayuhao"></i>
-                </div>
-            </div>
-            
-            <div class="content-row m-t-18 top-long-solid">
-                <div class="row-icon float">
-                    <i class="iconfont icon-saoyisao"></i>
-                </div>
-                <div class="row-title float">扫一扫</div>
-                
-            </div>
-            <div class="content-row top-short-solid bottom-long-solid">
-                <div class="row-icon float">
-                    <i class="iconfont icon-yaoyiyao"></i>
-                </div>
-                <div class="row-title float">摇一摇</div>
-                
-            </div>
-            <div class="content-row m-t-18 top-long-solid">
-                <div class="row-icon float">
-                    <i class="iconfont icon-gouwu"></i>
-                </div>
-                <div class="row-title float">购物</div>
-                
-            </div>
-            <div class="content-row top-short-solid bottom-long-solid">
-                <div class="row-icon float">
-                    <i class="iconfont icon-tubiaozhizuomoban-"></i>
-                </div>
-                <div class="row-title float">游戏</div>
-                
-            </div>
-            
-        <!-- </div> -->
-       
-        <!-- <div class="footer" ref="footer">
-            <div class="nav">
-                <div class="nav-wx">
-                    <div class="icon">
-                        <i  class="iconfont icon-xinxi1"></i>
-                    </div>
-                    <div class="title">
-                        <span>微信</span>
-                    </div>
-                    <div class="wx-state"><span>2</span></div>
-                    
-                </div>
-                <div class="nav-contacts">
-                     <div class="icon">
-                        <i class="iconfont icon-tongxunlu" ></i>
-                    </div>
-                    <div class="title">
-                        <span>通讯录</span>
-                    </div>
-                    <div class="contacts-state"></div>
-                </div>
-                <div class="nav-find">
-                     <div class="icon">
-                        <i class="iconfont icon-faxian"></i>
-                    </div>
-                    <div class="title">
-                        <span>发现</span>
-                    </div>
-                    <div class="find-state"></div>
-                </div>
-                <div class="nav-me">
-                     <div class="icon">
-                        <i class="iconfont icon-wo"></i>
-                    </div>
-                    <div class="title">
-                        <span>我</span>
-                    </div>
-                    <div class="me-state"></div>
-                </div>
-            </div>
-        </div> -->
-        <!-- <my-footer ref="myFooter"></my-footer> -->
+  <div class='find'>
+    <!-- <div class='content' ref='content'> -->
+    <div class='content-row m-t-18 top-long-solid bottom-long-solid'>
+      <div class='row-icon float'>
+        <i class='iconfont icon-pengyouquan'></i>
+      </div>
+      <div class='row-title float'>朋友圈</div>
+      <div class='pyq-right'>
+        <div><img src='../assets/images/yehua.jpg'></div>
+        <div class='state'></div>
+        <i class='iconfont icon-tongyongzhankaidayuhao'></i>
+      </div>
     </div>
+
+    <div class='content-row m-t-18 top-long-solid'>
+      <div class='row-icon float'>
+        <i class='iconfont icon-saoyisao'></i>
+      </div>
+      <div class='row-title float'>扫一扫</div>
+
+    </div>
+    <div class='content-row top-short-solid bottom-long-solid'>
+      <div class='row-icon float'>
+        <i class='iconfont icon-yaoyiyao'></i>
+      </div>
+      <div class='row-title float'>摇一摇</div>
+
+    </div>
+    <div class='content-row m-t-18 top-long-solid'>
+      <div class='row-icon float'>
+        <i class='iconfont icon-gouwu'></i>
+      </div>
+      <div class='row-title float'>购物</div>
+
+    </div>
+    <div class='content-row top-short-solid bottom-long-solid'>
+      <div class='row-icon float'>
+        <i class='iconfont icon-tubiaozhizuomoban-'></i>
+      </div>
+      <div class='row-title float'>游戏</div>
+    </div>
+  </div>
 </template>
 <script>
 export default {
-  name: "Find"
+  name: 'Find'
 };
 </script>
 <style scoped>
@@ -187,5 +141,3 @@ export default {
   float: left;
 }
 </style>
-
-

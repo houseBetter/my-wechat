@@ -11,6 +11,7 @@ import DialogBox from '@/components/DialogBox'
 // import Header from '@/components/Header'
 import Content from '@/components/Content'
 // import Vuex from '@/components/Vuex'
+import Test from '@/components/Test'
 
 Vue.use(Router)
 
@@ -45,7 +46,8 @@ export default new Router({
       path: '/me',
       name: 'Me',
       component: Me
-    },{
+    },
+    {
       path: '/dialog',
       name: 'Dialog',
       component: Dialog
@@ -59,6 +61,11 @@ export default new Router({
       path: '/dialog-box/:data',
       name: 'DialogBox',
       component: DialogBox
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: Test
     }
 
   ]

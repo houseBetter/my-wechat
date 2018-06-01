@@ -1,247 +1,247 @@
 <template>
-    <div class="wx">
-        <!-- <div class="header" ref="header">
-            <div class="header-title">
+    <div class='wx'>
+        <!-- <div class='header' ref='header'>
+            <div class='header-title'>
                 <span>{{headerTitle}}</span>
             </div>
            
-            <div v-bind:class="{'header-right-icon':cls.hasRightIconCls}">
-                <i  class="iconfont" v-bind:class="cls.iconCls"></i>
+            <div v-bind:class='{'header-right-icon':cls.hasRightIconCls}'>
+                <i  class='iconfont' v-bind:class='cls.iconCls'></i>
             </div>
         </div> -->
         <!-- 页头 -->
         <my-header 
-            :headerTitle="headerTitle" 
-            :hasRightIconCls="cls.hasRightIconCls"
-            :iconCls="cls.iconCls"
-            ref="myHeader"
+            :headerTitle='headerTitle' 
+            :hasRightIconCls='cls.hasRightIconCls'
+            :iconCls='cls.iconCls'
+            ref='myHeader'
             ></my-header>
 
-        <div class="content" ref="content">
-            <div class="search-bar">
-                <div class="bar-icon-input">
-                    <i class="iconfont icon-suosou"></i>
-                    <input type="text" placeholder="搜索" class="search_input"/>
+        <div class='content' ref='content'>
+            <div class='search-bar'>
+                <div class='bar-icon-input'>
+                    <i class='iconfont icon-suosou'></i>
+                    <input type='text' placeholder='搜索' class='search_input'/>
                 </div>
             </div>
-            <!-- <div class="dialog-list">
+            <!-- <div class='dialog-list'>
                 
-                <router-link class="dialog-row" tag="div" to="/dialog">   
-                    <div class="dialog-row-icon">
-                        <img src="../assets/images/header01.png"/>
-                        <i class="icon-state">9</i>
+                <router-link class='dialog-row' tag='div' to='/dialog'>   
+                    <div class='dialog-row-icon'>
+                        <img src='../assets/images/header01.png'/>
+                        <i class='icon-state'>9</i>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">东华</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>东华</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
 
-                <router-link class="dialog-row" tag="div" to="/dialog">
-                    <div class="dialog-row-icon">
-                        <img src="../assets/images/sunquan.jpg">
+                <router-link class='dialog-row' tag='div' to='/dialog'>
+                    <div class='dialog-row-icon'>
+                        <img src='../assets/images/sunquan.jpg'>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">孙权</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>孙权</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
-                <router-link class="dialog-row" tag="div" to="/dialog">
-                    <div class="dialog-row-icon">
-                        <img src="../assets/images/sunshangxiang.jpg">
+                <router-link class='dialog-row' tag='div' to='/dialog'>
+                    <div class='dialog-row-icon'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">孙尚香</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>孙尚香</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
-                <router-link class="dialog-row" tag="div" to="/dialog">
-                    <div class="dialog-row-icon">
-                        <img src="../assets/images/guangyu.jpg">
+                <router-link class='dialog-row' tag='div' to='/dialog'>
+                    <div class='dialog-row-icon'>
+                        <img src='../assets/images/guangyu.jpg'>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">关羽</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>关羽</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
-                <router-link class="dialog-row" tag="div" to="/dialog">
-                    <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="../assets/images/guangyu.jpg">
-                        <img src="../assets/images/sunshangxiang.jpg">
+                <router-link class='dialog-row' tag='div' to='/dialog'>
+                    <div class='dialog-row-icon' ref='dialogRowIcon'>
+                        <img src='../assets/images/guangyu.jpg'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">关、孙群</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>关、孙群</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
-                <router-link class="dialog-row" tag="div" to="/dialog">
-                    <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="../assets/images/guangyu.jpg">
-                        <img src="../assets/images/sunshangxiang.jpg">
-                        <img src="../assets/images/sunquan.jpg">
+                <router-link class='dialog-row' tag='div' to='/dialog'>
+                    <div class='dialog-row-icon' ref='dialogRowIcon'>
+                        <img src='../assets/images/guangyu.jpg'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
+                        <img src='../assets/images/sunquan.jpg'>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">第一大群</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>第一大群</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
-                <router-link class="dialog-row" tag="div" to="/dialog">
-                    <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="../assets/images/guangyu.jpg">
-                        <img src="../assets/images/sunshangxiang.jpg">
-                        <img src="../assets/images/sunquan.jpg">
-                        <img src="../assets/images/guangyu.jpg">
-                        <img src="../assets/images/sunshangxiang.jpg">
-                        <img src="../assets/images/sunquan.jpg">
+                <router-link class='dialog-row' tag='div' to='/dialog'>
+                    <div class='dialog-row-icon' ref='dialogRowIcon'>
+                        <img src='../assets/images/guangyu.jpg'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
+                        <img src='../assets/images/sunquan.jpg'>
+                        <img src='../assets/images/guangyu.jpg'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
+                        <img src='../assets/images/sunquan.jpg'>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">第二大群</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>第二大群</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
-                <router-link class="dialog-row" tag="div" to="/dialog">
-                    <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img src="../assets/images/guangyu.jpg">
-                        <img src="../assets/images/sunshangxiang.jpg">
-                        <img src="../assets/images/sunquan.jpg">
-                        <img src="../assets/images/guangyu.jpg">
-                        <img src="../assets/images/sunshangxiang.jpg">
-                        <img src="../assets/images/sunquan.jpg">
-                        <img src="../assets/images/sunquan.jpg">
-                        <img src="../assets/images/guangyu.jpg">
-                        <img src="../assets/images/sunshangxiang.jpg">
-                        <img src="../assets/images/sunquan.jpg">
+                <router-link class='dialog-row' tag='div' to='/dialog'>
+                    <div class='dialog-row-icon' ref='dialogRowIcon'>
+                        <img src='../assets/images/guangyu.jpg'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
+                        <img src='../assets/images/sunquan.jpg'>
+                        <img src='../assets/images/guangyu.jpg'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
+                        <img src='../assets/images/sunquan.jpg'>
+                        <img src='../assets/images/sunquan.jpg'>
+                        <img src='../assets/images/guangyu.jpg'>
+                        <img src='../assets/images/sunshangxiang.jpg'>
+                        <img src='../assets/images/sunquan.jpg'>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">第3大群</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>第3大群</div>
+                        <div class='row-title-msg'>
                                 夜华:我试一试
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
             </div> -->
             <my-msg-box 
-                v-for="msg in msgList"
+                v-for='msg in msgList'
                 v-bind:key="msg.type==='private'?msg.account.uid:msg.gid"
-                :data="msg">
+                :data='msg'>
             </my-msg-box>
 
         </div>
         
-        <!-- <div class="footer" ref="footer">
-            <div class="nav">
-                <div class="nav-wx">
-                    <div class="icon">
-                        <i  class="iconfont icon-xinxi1"></i>
+        <!-- <div class='footer' ref='footer'>
+            <div class='nav'>
+                <div class='nav-wx'>
+                    <div class='icon'>
+                        <i  class='iconfont icon-xinxi1'></i>
                     </div>
-                    <div class="title">
+                    <div class='title'>
                         <span>微信</span>
                     </div>
-                    <div class="wx-state"><span>2</span></div>
+                    <div class='wx-state'><span>2</span></div>
                     
                 </div>
-                <div class="nav-contacts">
-                     <div class="icon">
-                        <i class="iconfont icon-tongxunlu" ></i>
+                <div class='nav-contacts'>
+                     <div class='icon'>
+                        <i class='iconfont icon-tongxunlu' ></i>
                     </div>
-                    <div class="title">
+                    <div class='title'>
                         <span>通讯录</span>
                     </div>
-                    <div class="contacts-state"></div>
+                    <div class='contacts-state'></div>
                 </div>
-                <div class="nav-find">
-                     <div class="icon">
-                        <i class="iconfont icon-faxian"></i>
+                <div class='nav-find'>
+                     <div class='icon'>
+                        <i class='iconfont icon-faxian'></i>
                     </div>
-                    <div class="title">
+                    <div class='title'>
                         <span>发现</span>
                     </div>
-                    <div class="find-state"></div>
+                    <div class='find-state'></div>
                 </div>
-                <div class="nav-me">
-                     <div class="icon">
-                        <i class="iconfont icon-wo"></i>
+                <div class='nav-me'>
+                     <div class='icon'>
+                        <i class='iconfont icon-wo'></i>
                     </div>
-                    <div class="title">
+                    <div class='title'>
                         <span>我</span>
                     </div>
-                    <div class="me-state"></div>
+                    <div class='me-state'></div>
                 </div>
             </div>
         </div> -->
         <!-- 页底 -->
-        <my-footer ref="myFooter"></my-footer>
+        <my-footer ref='myFooter'></my-footer>
     </div>
 </template>
 <script>
-import MyHeader from "./Header";
-import MyFooter from "./Footer";
-import MyMsgBox from "./MsgBox";
+import MyHeader from './Header';
+import MyFooter from './Footer';
+import MyMsgBox from './MsgBox';
 
 export default {
-  name: "Index",
+  name: 'Index',
   components: {
     MyHeader,
     MyFooter,
@@ -249,183 +249,183 @@ export default {
   },
   data() {
     return {
-      headerTitle: "微信",
+      headerTitle: '微信',
       cls: {
         hasRightIconCls: true,
         iconCls: {
-          "icon-tianjiahaoyou1": false,
-          "icon-jiahao": true
+          'icon-tianjiahaoyou1': false,
+          'icon-jiahao': true
         }
       },
       msgList: [
         {
-          uid: "yehua",
+          uid: 'yehua',
           account:{
-              uid: "baiqian",
-              uname: "白浅",
-              icon: require("../assets/images/baiqian.jpg")
+              uid: 'baiqian',
+              uname: '白浅',
+              icon: require('../assets/images/baiqian.jpg')
           },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
+          gid: '',
+          gname: '',
+          type: 'private', //'private':私聊,'public':群聊
           users: [
             {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
+              uid: 'yehua',
+              uname: '夜华',
+              icon: require('../assets/images/yehua.jpg')
             },
             {
-              uid: "baiqian",
-              uname: "白浅",
-              icon: require("../assets/images/baiqian.jpg")
+              uid: 'baiqian',
+              uname: '白浅',
+              icon: require('../assets/images/baiqian.jpg')
             }
           ],
           record: [
             {
-              uid: "baiqian",
+              uid: 'baiqian',
               uname:'白浅',
               isMe:false,
-              icon: require("../assets/images/baiqian.jpg"),
-              say: "吃饭了没"
+              icon: require('../assets/images/baiqian.jpg'),
+              say: '吃饭了没'
             },
             {
-              uid: "yehua",
+              uid: 'yehua',
               uname:'夜华',
               isMe:true,
-              icon: require("../assets/images/yehua.jpg"),
-              say: "没"
+              icon: require('../assets/images/yehua.jpg'),
+              say: '没'
             },
             {
-              uid: "baiqian",
+              uid: 'baiqian',
               uname:'白浅',
               isMe:false,
-              icon: require("../assets/images/baiqian.jpg"),
-              say: "一起吃吧"
+              icon: require('../assets/images/baiqian.jpg'),
+              say: '一起吃吧'
             },
             {
-              uid: "yehua",
+              uid: 'yehua',
               uname:'夜华',
               isMe:true,
-              icon: require("../assets/images/yehua.jpg"),
-              say: "好"
+              icon: require('../assets/images/yehua.jpg'),
+              say: '好'
             }
           ]
         },
         {
-          uid: "yehua", //当前账号所属用户
+          uid: 'yehua', //当前账号所属用户
           account:{
-              uid:"",
-              uname:"",
+              uid:'',
+              uname:'',
               icon:''
           },
-          gid: "1group",
-          gname: "第1大群",
-          type: "public", //'private':私聊,'public':群聊
+          gid: '1group',
+          gname: '第1大群',
+          type: 'public', //'private':私聊,'public':群聊
           users: [
             {
-              uid: "liubei",
-              uname: "刘备",
-              icon: require("../assets/images/liubei.jpg")
+              uid: 'liubei',
+              uname: '刘备',
+              icon: require('../assets/images/liubei.jpg')
             },
             {
-              uid: "guangyu",
-              uname: "关羽",
-              icon: require("../assets/images/guangyu.jpg")
+              uid: 'guangyu',
+              uname: '关羽',
+              icon: require('../assets/images/guangyu.jpg')
             },
             {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
+              uid: 'yehua',
+              uname: '夜华',
+              icon: require('../assets/images/yehua.jpg')
             }
           ],
           record: [
             {
-              uid: "liubei",
-              uid: "刘备",
+              uid: 'liubei',
+              uid: '刘备',
               isMe:false,
-              icon: require("../assets/images/liubei.jpg"),
-              say: "贤弟！"
+              icon: require('../assets/images/liubei.jpg'),
+              say: '贤弟！'
             },
             {
-              uid: "guangyu",
-              uname: "关羽",
+              uid: 'guangyu',
+              uname: '关羽',
               isMe:false,
-              icon: require("../assets/images/guangyu.jpg"),
-              say: "大哥！！"
+              icon: require('../assets/images/guangyu.jpg'),
+              say: '大哥！！'
             },
             {
-              uid: "liubei",
-              uid: "刘备",
+              uid: 'liubei',
+              uid: '刘备',
               isMe:false,
-              icon: require("../assets/images/liubei.jpg"),
-              say: "贤弟！！！"
+              icon: require('../assets/images/liubei.jpg'),
+              say: '贤弟！！！'
             },
             {
-              uid: "guangyu",
-              uname: "关羽",
+              uid: 'guangyu',
+              uname: '关羽',
               isMe:false,
-              icon: require("../assets/images/guangyu.jpg"),
-              say: "大哥！！"
+              icon: require('../assets/images/guangyu.jpg'),
+              say: '大哥！！'
             },
             {
-              uid: "liubei",
-              uid: "刘备",
+              uid: 'liubei',
+              uid: '刘备',
               isMe:false,
-              icon: require("../assets/images/liubei.jpg"),
-              say: "贤弟！！！！"
+              icon: require('../assets/images/liubei.jpg'),
+              say: '贤弟！！！！'
             },
             {
-              uid: "guangyu",
-              uname: "关羽",
+              uid: 'guangyu',
+              uname: '关羽',
               isMe:false,
-              icon: require("../assets/images/guangyu.jpg"),
-              say: "你有病吧！"
+              icon: require('../assets/images/guangyu.jpg'),
+              say: '你有病吧！'
             },
             {
-              uid: "yehua",
-              uname: "夜华",
+              uid: 'yehua',
+              uname: '夜华',
               isMe:true,
-              icon: require("../assets/images/yehua.jpg"),
-              say: "一群2货"
+              icon: require('../assets/images/yehua.jpg'),
+              say: '一群2货'
             }
           ]
         },
         {
-          uid: "yehua",
+          uid: 'yehua',
           account:{
-              uid:"guangyu",
-              uname:"关羽",
-              icon:require("../assets/images/guangyu.jpg")
+              uid:'guangyu',
+              uname:'关羽',
+              icon:require('../assets/images/guangyu.jpg')
           },
-          gid: "",
-          gname: "",
-          type: "private", //'private':私聊,'public':群聊
+          gid: '',
+          gname: '',
+          type: 'private', //'private':私聊,'public':群聊
           users: [
             {
-              uid: "yehua",
-              uname: "夜华",
-              icon: require("../assets/images/yehua.jpg")
+              uid: 'yehua',
+              uname: '夜华',
+              icon: require('../assets/images/yehua.jpg')
             },
             {
-              uid: "guangyu",
-              uname: "关羽",
-              icon: require("../assets/images/guangyu.jpg")
+              uid: 'guangyu',
+              uname: '关羽',
+              icon: require('../assets/images/guangyu.jpg')
             }
           ],
           record: [
             {
-              uid: "yehua",
-              uname: "夜华",
+              uid: 'yehua',
+              uname: '夜华',
               isMe:true,
-              icon: require("../assets/images/yehua.jpg"),
-              say: "小关"
+              icon: require('../assets/images/yehua.jpg'),
+              say: '小关'
             },
             {
-              uid: "guangyu",
-              uname: "关羽",
+              uid: 'guangyu',
+              uname: '关羽',
               isMe:false,
-              icon: require("../assets/images/guangyu.jpg"),
-              say: "不在"
+              icon: require('../assets/images/guangyu.jpg'),
+              say: '不在'
             }
           ]
         }
@@ -442,13 +442,13 @@ export default {
     const footerViewHeight = this.$refs.myFooter.$refs.footer.offsetHeight;
     const totalHeight = document.documentElement.clientHeight;
     this.$refs.content.style.height =
-      totalHeight - headerViewHeight - footerViewHeight + "px";
+      totalHeight - headerViewHeight - footerViewHeight + 'px';
   }
 };
 </script>
 
 <style scoped>
-@import "../assets/iconfont/iconfont.css";
+@import '../assets/iconfont/iconfont.css';
 
 /*--------- 页中 ----------*/
 .content {
@@ -530,7 +530,7 @@ export default {
     text-align: right;
 }
 .dialog-row:not(:first-child)::before{
-    content: "";
+    content: '';
     position: absolute;
     left: 8px;
     top: 0;
@@ -542,7 +542,7 @@ export default {
     width: 200%;
 }
 .dialog-row:last-child::after{
-    content: "";
+    content: '';
     position: absolute;
     left: 8px;
     bottom: 0;

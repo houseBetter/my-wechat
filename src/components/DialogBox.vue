@@ -1,99 +1,75 @@
 <template>
-    <div class="dialog" ref="dialog">
-        <!-- <div class="content" ref="content"> -->
-            <div class="msg-list">
-                <!-- <template v-for="(record,index) in this.$route.params.data.record"> -->
-                    <template v-for="(record,index) in getMsgByTypeAndId.record">
-                    <div :class="{'msg-row':!record.isMe,'msg-row-me':record.isMe}" 
-                        :key="index"                      
-                    >
-                        <div class="msg-icon"  >
-                            <img :src="record.icon">
+    <div class='dialog' ref='dialog'>
+        <!-- <div class='content' ref='content'> -->
+            <div class='msg-list'>
+                <!-- <template v-for='(record,index) in this.$route.params.data.record'> -->
+                    <template v-for='(record,index) in getMsgByTypeAndId.record'>
+                    <div :class="{'msg-row':!record.isMe,'msg-row-me':record.isMe}"
+                        :key='index'>
+                        <div class='msg-icon'  >
+                            <img :src='record.icon'>
                         </div>
-                        <div class="msg-box">
-                            {{record.say}}  
+                        <div class='msg-box'>
+                            {{record.say}}
                         </div>
                     </div>
                 </template>
             </div>
-        <!-- </div> -->
-        <!-- <div class="dialog-footer" ref="dialogFooter">
-            <div class="icon-voice">
-                <i class="iconfont icon-shengyin"></i>
-            </div>
-            <div class="msg-input">
-                <input type="text" placeholder="请输入聊天信息"/>
-            </div>
-            <div class="icon-bq">
-                <i class="iconfont icon-biaoqing"></i>
-            </div>
-            <div class="icon-add">
-                <i class="iconfont icon-tianjia"></i>
-            </div>
-        </div> -->
-
     </div>
 </template>
 <script>
 // import MyFooter from './Footer'
-import {mapState} from 'vuex'
-import {mapGetters} from 'vuex'
+import { mapState } from 'vuex'
 export default {
-  name: "Dialog",
-  created(){
-    let  {...headerSet} ={
-        headerTitle : this.headerTitle,
-        cls:{
-            hasRightIconCls: true,
-            iconCls: {
-                "icon-tianjiahaoyou1": false,
-                "icon-jiahao": false,
-                "icon-huifukuangtianjiachengyuan": true
-            }
-        },
-        hasHeaderLeft: true,
-        headerLeftTitle: '微信'
+  name: 'Dialog',
+  created () {
+    let { ...headerSet } = {
+      headerTitle: this.headerTitle,
+      cls: {
+        hasRightIconCls: true,
+        iconCls: {
+          'icon-tianjiahaoyou1': false,
+          'icon-jiahao': false,
+          'icon-huifukuangtianjiachengyuan': true
+        }
+      },
+      hasHeaderLeft: true,
+      headerLeftTitle: '微信'
     };
     this.$store.commit({
-        type:'modifyHeaderSet',
-        headerSet:headerSet
+      type: 'modifyHeaderSet',
+      headerSet: headerSet
     });
     this.$store.commit({
-        type:'modifyFooterNavSet',
-        isShow:false
+      type: 'modifyFooterNavSet',
+      isShow: false
     });
     this.$store.commit({
-        type:'modifySearchSet',
-        isShow:false
+      type: 'modifySearchSet',
+      isShow: false
     });
-
-     
   },
-  computed:{
+  computed: {
     ...mapState(['headerSet']),
-    getMsgByTypeAndId(){
-        return this.$store.getters.getMsgByTypeAndId(this.type,this.id)
+    getMsgByTypeAndId () {
+      return this.$store.getters.getMsgByTypeAndId(this.type, this.id)
     },
-    headerTitle: function() {
-        
-        
-        let title = ''
-        if (this.type === "private") {
-            title = this.getMsgByTypeAndId.account.uname;
-        }
-        if (this.type === "public") {
-            title = this.getMsgByTypeAndId.gname;
-        }
-        return title
-    }
-
-    
-  },
-  data(){
-      return {
-          type: this.$route.params.data.type,
-          id: this.$route.params.data.id
+    headerTitle: function () {
+      let title = ''
+      if (this.type === 'private') {
+        title = this.getMsgByTypeAndId.account.uname;
       }
+      if (this.type === 'public') {
+        title = this.getMsgByTypeAndId.gname;
+      }
+      return title
+    }
+  },
+  data () {
+    return {
+      type: this.$route.params.data.type,
+      id: this.$route.params.data.id
+    }
   }
 };
 </script>
@@ -135,7 +111,7 @@ export default {
   position: relative;
 }
 .dialog .msg-list .msg-row .msg-box::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 0;
@@ -155,7 +131,7 @@ export default {
   position: relative;
 }
 .dialog .msg-list .msg-row-me .msg-box::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 0;
@@ -205,5 +181,3 @@ export default {
   flex-grow: 8;
 } */
 </style>
-
-

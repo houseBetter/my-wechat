@@ -1,63 +1,59 @@
 <template>
-    <div class="dialog-list" >
+    <div class='dialog-list' >
             <template v-if="data.type==='private' && data.record.length > 0" >
-                <template v-for="user in data.users" v-if="user.uid !== data.uid" >
-                    <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:{type:data.type,id:data.account.uid}}}" :key="user.uid"
-                    v-on:click.native="$emit('modify-header',user)"
-                    >
-                        <div class="dialog-row-icon">
-                            <img :src="user.icon"/>
-                            <i class="icon-state">{{data.record.length}}</i>
+                <template v-for='user in data.users' v-if='user.uid !== data.uid' >
+                    <router-link class='dialog-row' tag='div' :to="{name:'DialogBox',params:{data:{type:data.type,id:data.account.uid}}}" :key='user.uid'>
+                        <div class='dialog-row-icon'>
+                            <img :src='user.icon'/>
+                            <i class='icon-state'>{{data.record.length}}</i>
                         </div>
-                        <div class="dialog-row-title">
-                            <div class="row-title-nickname">{{user.uname}}</div>
-                            <div class="row-title-msg">
+                        <div class='dialog-row-title'>
+                            <div class='row-title-nickname'>{{user.uname}}</div>
+                            <div class='row-title-msg'>
                                 {{data.record[data.record.length-1].uname}}:{{data.record[data.record.length-1].say}}
                             </div>
                         </div>
-                        <div class="dialog-row-right">
-                            <div class="right-time">22:04</div>
-                            <div class="right-icon">
-                                <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                        <div class='dialog-row-right'>
+                            <div class='right-time'>22:04</div>
+                            <div class='right-icon'>
+                                <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                             </div>
                         </div>
                     </router-link>
                 </template>
             </template>
             <template v-else-if="data.type==='public' && data.record.length > 0">
-                <router-link class="dialog-row" tag="div" :to="{name:'DialogBox',params:{data:{type:data.type,id:data.gid}}}">
-                    <div class="dialog-row-icon" ref="dialogRowIcon">
-                        <img 
-                            :src="user.icon" 
-                            v-bind:key="user.uid"
-                            v-for="user in data.users">
-                        <i class="icon-state">{{data.record.length}}</i>
+                <router-link class='dialog-row' tag='div' :to="{name:'DialogBox',params:{data:{type:data.type,id:data.gid}}}">
+                    <div class='dialog-row-icon' ref='dialogRowIcon'>
+                        <img
+                        :src='user.icon'
+                        v-bind:key='user.uid'
+                        v-for='user in data.users'>
+                        <i class='icon-state'>{{data.record.length}}</i>
                     </div>
-                    <div class="dialog-row-title">
-                        <div class="row-title-nickname">{{data.gname}}</div>
-                        <div class="row-title-msg">
+                    <div class='dialog-row-title'>
+                        <div class='row-title-nickname'>{{data.gname}}</div>
+                        <div class='row-title-msg'>
                             {{data.record[data.record.length-1].uname}}:{{data.record[data.record.length-1].say}}
                         </div>
                     </div>
-                    <div class="dialog-row-right">
-                        <div class="right-time">22:04</div>
-                        <div class="right-icon">
-                            <i class="iconfont icon-maikefeng-jingyin-tianchongsvg"></i>
+                    <div class='dialog-row-right'>
+                        <div class='right-time'>22:04</div>
+                        <div class='right-icon'>
+                            <i class='iconfont icon-maikefeng-jingyin-tianchongsvg'></i>
                         </div>
                     </div>
                 </router-link>
             </template>
-
-    </div> 
+    </div>
 </template>
 <script>
 export default {
-    name: 'MsgBox',
-    props:['data']
+  name: 'MsgBox',
+  props: ['data']
 }
 </script>
 <style scoped>
-
 
 /* 对话框 */
 .dialog-list .dialog-row{
@@ -90,12 +86,11 @@ export default {
     height: 18px;
     line-height: 18px;
     background-color:red;
-    border-radius: 9px; 
+    border-radius: 9px;
     padding:0 4px;
     color:#fff;
     text-align: center;
 
-    
 }
 .dialog-list .dialog-row .dialog-row-icon img{
     /* width: 48px; */
@@ -136,7 +131,7 @@ export default {
     text-align: right;
 }
 .dialog-row:not(:first-child)::before{
-    content: "";
+    content: '';
     position: absolute;
     left: 8px;
     top: 0;
@@ -148,7 +143,7 @@ export default {
     width: 200%;
 }
 .dialog-row:last-child::after{
-    content: "";
+    content: '';
     position: absolute;
     left: 8px;
     bottom: 0;
@@ -161,5 +156,3 @@ export default {
 }
 
 </style>
-
-
